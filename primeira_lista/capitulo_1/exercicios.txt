@@ -1,0 +1,242 @@
+1.8 Exercícios
+
+1.
+
+(a) (P Q ∨ P10.000)
+
+P, Q, P10.000 são fórmulas - Regra 2
+
+PQ não é formula, pois falta um conectivo entre os dois símbolos proposicionais
+
+Não é fórmula
+
+(b) (P ∧ Q) → ((Q ↔ P) ∨ ¬¬R)
+
+P, Q, R são fórmulas - Regra 2
+P ∧ Q é fórmula - Regra 5
+Q ↔ P é fórmula - Regra 7
+¬R, ¬¬R são fórmulas - Regra 3
+(Q ↔ P) ∨ ¬¬R é fórmula - Regra 4
+(P ∧ Q) → ((Q ↔ P) ∨ ¬¬R) é fórmula - Regra 6
+
+É fórmula
+
+
+(c) ¬¬P
+
+P é fórmula - Regra 2
+¬P é fórmula - Regra 3
+H: ¬¬P é fórmula
+
+É fórmula
+
+(d) ∨Q
+
+Não é fórmula, pois o conectivo ∨ é um operador binário e precisa de dois valores
+
+
+(e) (P ∧ Q) → ((Q ↔ ¬R))
+
+P, Q, R são fórmulas - Regra 2
+¬R é fórmula - Regra 3
+P ∧ Q é fórmula - Regra 5
+Q ↔ ¬R - Regra 7
+H: (P ∧ Q) → ((Q ↔ ¬R)) é fórmula - Regra 6
+
+É fórmula
+
+2.
+(a) Sim, pois o símbolo de pontuação não é um elemento necessário para formar uma fórmula, existindo portanto, fórmulas apenas com símbolos proposicionais, símbolos verdade e / ou com conectivos.
+
+(b) 4 símbolos:
+
+1. símbolos de pontuação
+2. símbolos proposicionais
+3. conectivos proposicionais
+4. símbolos verdade
+
+(c) (?) N Sim, pois em alguns casos não é necessário a utilização de símbolos de pontuação, podendo eles serem omitidos nessas situações. Exemplo: P → ¬ Q
+
+3.
+
+(a)
+
+(b) H : P → ((Q → R) → ((P → R) → (P → R)))
+
+comp [H] = comp [P → ((Q → R) → ((P → R) → (P → R)))]
+= comp [P] + comp [((Q → R) → ((P → R) → (P → R)))] + 1
+= 1 + comp[(Q → R)] + comp[((P → R) → (P → R))] + 1 + 1
+= 1 + comp[Q] + comp[R] + comp[(P → R)] + comp[(P → R] + 2 + 1 + 1
+= 1 + 1 + 1 + comp[P] + comp[R] + comp [P] + comp[R] + 4 + 1 + 1
+= 3 + 1 + 1 + 1 + 1 + 4 + 2 = 13
+
+subfórmulas:  P → ((Q → R) → ((P → R) → (P → R))), P, ((Q → R) → ((P → R) → (P → R))),
+(Q → R), ((P → R) → (P → R)), (P → R), Q, R
+
+
+(c) H: ((P → ¬P) ↔ ¬P) ∨ Q
+comp[H] = comp [((P → ¬P) ↔ ¬P) ∨ Q]
+= comp [((P → ¬P) ↔ ¬P)] + comp[Q] + 1
+= comp [(P → ¬P)] + comp[¬P] + 1+ 1 + 1
+= comp[P] + comp[¬P] + comp[¬P] + 1+ 1 + 1 + 1
+= 1 + comp[P] + comp[P] + 4 + 1 + 1
+= 1 + 1 + 1 + 6 = 9
+
+subfórmulas: ((P → ¬P) ↔ ¬P) ∨ Q, ((P → ¬P) ↔ ¬P), Q, (P → ¬P), ¬P, P, Q
+
+(d) H : ¬(P → ¬P)
+comp [H] = comp [¬(P → ¬P)]
+= comp [(P → ¬P)] + 1
+= comp [P] + comp [¬P] + 1 + 1
+= 1 + comp[P] + 1 + 1 + 1
+= 1 + 1 + 3 = 5
+
+subfórmulas: ¬(P → ¬P), (P → ¬P), P, ¬P
+
+4.
+
+(a) ((¬(¬P)) ↔ ((¬((¬(¬(P ∨ Q))) → R)) ∧ P))
+((¬(¬P)) ↔ ((¬((¬¬(P ∨ Q)) → R)) ∧ P))
+((¬¬P) ↔ ((¬(¬¬(P ∨ Q) → R)) ∧ P))
+(¬¬P ↔ (¬(¬¬(P ∨ Q) → R) ∧ P))
+¬¬P ↔ (¬(¬¬(P ∨ Q) → R) ∧ P
+
+(b) (¬P → (Q ∨ R)) ↔ ((P ∧ Q) ↔ (¬¬R ∨ ¬P))
+¬P → (Q ∨ R) ↔ ((P ∧ Q) ↔ (¬¬R ∨ ¬P))
+¬P → (Q ∨ R) ↔ (P ∧ Q) ↔ (¬¬R ∨ ¬P)
+
+(c) ((P ∨ Q) → (P → (¬Q)))
+
+((P ∨ Q) → (P → (¬Q)))
+((P ∨ Q) → (P → ¬Q))
+((P ∨ Q) → P → ¬Q)
+(P ∨ Q) → P → ¬Q
+
+5.
+
+(a) P ∨ (¬Q → (R ↔ ¬R))
+
+fórmulas: P ∨ (¬Q → (R ↔ ¬R)), P, (¬Q → (R ↔ ¬R)),
+(R ↔ ¬R), ¬Q, R, ¬R, Q
+
+(b) (Q → ¬P) ∧ Q
+
+fórmulas: (Q → ¬P) ∧ Q, (Q → ¬P), Q, ¬P, P
+
+(c) ¬P ∨ (Q ↔ Q)
+
+fórmulas: ¬P ∨ (Q ↔ Q), ¬P, (Q ↔ Q), Q, P
+
+(d) (¬¬P) → (Q ↔ P) ∧ P(¬¬R)
+
+Não é fórmula, pois não há conectivo entre o P e (¬¬R)
+
+6.
+
+(a)
+
+3.a
+((¬¬P ∨ Q) ↔ (P → Q)) ∧ P10.000
+((¬¬P ∨ Q) ↔ →PQ ) ∧ P10.000
+((¬P¬ ∨ Q) ↔ →PQ ) ∧ P10.000
+((P¬¬ ∨ Q) ↔ →PQ ) ∧ P10.000
+(∨P¬¬Q ↔ →PQ ) ∧ P10.000
+↔∨P¬¬Q →PQ ∧ P10.000
+∧↔∨P¬¬Q →PQP10.000
+
+3.b
+P → ((Q → R) → ((P → R) → (P → R)))
+ →P → →QR → → PR → PR
+
+3.c
+((P → ¬P) ↔ ¬P) ∨ Q
+∨↔ → P ¬P ¬P Q
+
+3.d
+¬(P → ¬P)
+¬ → P ¬P
+
+4.a
+((¬(¬P)) ↔ ((¬((¬(¬(P ∨ Q))) → R)) ∧ P))
+↔ ¬ ¬ P ∧ ¬ → ¬ ¬ ∨ PQRP
+
+4.b
+(¬P → (Q ∨ R)) ↔ ((P ∧ Q) ↔ (¬¬R ∨ ¬P))
+↔ → ¬P ∨ Q R ↔ ∧ P Q ∨ ¬ ¬ R ¬ P
+
+4.c
+((P ∨ Q) → (P → (¬Q)))
+→ ∨ P Q → P ¬ Q
+
+(b)
+
+∨ → P Q ↔ R → ∨P Q¬S
+(P → Q) ∨ R ↔ (P ∨ Q) → (¬S)
+
+↔→ ¬P ∨ QR ↔ ∧P Q ∨ ¬¬R¬P
+(¬P) ↔ (Q ∨ R) → (P ∧Q) ↔ (¬ ¬ R) ∨ (¬ P)
+
+7.
+(a) Não, pois a representação em  notação convencional corresponde a apenas uma fórmula
+na notação polonesa, podendo no máximo, ser alterado a ordem de subfórmulas ligadas por
+conectivos de mesma precedência.
+
+(b) Não, pois a representação em notação polonesa (ou prefixa) corresponde a apenas uma fórmula
+na notação convencional.
+
+8.
+
+5.a 
+P ∨ ¬Q → R ↔ ¬R
+PQ ¬ R R ¬  ↔  → ∨
+
+5.b
+Q → ¬P ∧ Q
+Q P ¬ → Q ∧
+
+5.c
+¬P ∨ Q ↔ Q
+P ¬Q Q ↔ V
+
+5.d
+¬¬P → Q ↔ P ∧ P¬¬R
+P ¬ ¬ Q P ↔ → P R ¬ ¬ ∧
+
+3.a
+
+3.b 
+P → ((Q → R) → ((P → R) → (P → R)))
+P Q R → P R → PR → → → →
+
+3.c
+((P → ¬P) ↔ ¬P) ∨ Q
+P P ¬ → P ¬ ↔ Q ∧
+
+3.d
+¬(P → ¬P)
+P P ¬ → ¬
+
+4.a
+((¬(¬P)) ↔ ((¬((¬(¬(P ∨ Q))) → R)) ∧ P))
+P ¬ ¬ P Q V ¬ ¬ R ¬ → P ∧ ↔
+
+4.b
+(¬P → (Q ∨ R)) ↔ ((P ∧ Q) ↔ (¬¬R ∨ ¬P))
+P ¬ Q R V → P Q ∧ R ¬ ¬ P ¬ V ↔ ↔
+
+4.c
+((P ∨ Q) → (P → (¬Q)))
+P Q V P Q ¬ → →
+
+6.b
+(P → Q) ∨ ((R ↔ (P ∨ Q)) → (¬S))
+→PQR∨PQ↔S¬→∨
+
+(((¬P) ↔ (Q ∨ R)) → ((P ∧Q) ↔ (¬ ¬ R))) ∨ (¬ P)
+P¬QR∨↔PQ∧R¬¬↔→P¬∨
+
+10.
+
+(a) comp[H] será sempre ímpar, pois os conectivos V, ∧ , ↔  e → são binários.
+
+(b) O comp[H] será dado pelo número de conectivos + o de símbolos proposicionais e/ou verdade.

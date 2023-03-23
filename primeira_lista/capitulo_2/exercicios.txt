@@ -1,0 +1,508 @@
+2.6 Exercícios
+
+1. 
+(a) true - símbolo sintático 
+          T    - símbolo semântico
+
+(b) false - símbolo sintático
+          F      - símbolo semântico
+
+(c) → - conectivo lógico
+      ⇒ - símbolo da metalinguagem
+
+(d) ↔ - conectivo lógico
+       ⇔ - símbolo da metalinguagem
+
+2. 
+Sintaxe é a estrutura ou forma de expressões, declarações das fórmulas
+Já a semântica refere-se ao significado associado das fórmulas
+
+3. Não, pois no português, o 'ou' dá ideia de exclusão, sendo falso se os dois
+elementos comparados fossem verdadeiros. Já na lógica, caso isso ocorra, o
+resultado continuaria verdadeiro (true).
+Não é possível concluir que irei ao teatro e ao cinema ao mesmo tempo, pois basta que um dos dois 
+ocorra para que seja verdadeiro. Caso o conectivo fosse o 'e' lógico (∧), seria possível concluir que eu irei
+tanto ao teatro quanto ao cinema ao mesmo tempo.
+
+4. H = (P → Q)
+
+(a) supondo que I[H] = T,
+
+I[P] = T ou F
+I[Q] = T ou F
+
+(b) supondo que I[H] = T e I[P] = T,
+
+a interpretação I[Q] = T
+
+(c) supondo que I[Q] = T,
+
+a interpretação I[H] = T
+
+(d) supondo que I[H] = T e I[P] = F,
+
+a interpretação I[Q] = T ou F
+
+(e) supondo que I[Q] = F e I[P] = T,
+
+a interpretação I[H] = F
+
+5.
+
+(a)
+
+H : (¬P ∨ Q) ↔ (P → Q)
+
+P     ¬P     Q     P → Q     ¬P → Q     H
+T       F       T           T                    T           T
+T       F       F           F                    T           F
+F       T       T           T                    T           T
+F       T       F           T                    F           F               
+
+
+(b)
+
+H : P → ((Q → R) → ((P → R) → (P → R)))
+
+P     Q     R     (Q→ R)     (P → R)     (P → R) → (P → R)     ((Q → R) → ((P → R) → (P → R))     H
+T      T     T            T                   T                               T                                                T                                                 T
+T      T     F            F                    F                               T                                               T                                                  T
+T      F     T            T                    T                               T                                               T                                                 T
+T      F     F            T                   F                                T                                                T                                                 T
+F      T     T            T                   T                                T                                                T                                                 T
+F      T     F            F                   T                                 T                                               T                                                 T
+F      F     T            T                   T                                T                                                T                                                 T
+F      F     F            T                   T                                T                                                 T                                                T
+
+(c)
+
+H : (P → ¬Q) ↔ ¬P
+
+P     ¬P     Q     ¬Q     P → ¬Q     H
+T       F       T         F           F              T
+T       F       F         T          T               F
+F       T      T          F          T               T
+F       T       F         T          T               T
+
+
+(d)
+
+H : (Q → ¬P)
+
+Q     P     ¬P     H
+T      T       F       F
+T      F       T       T
+F      T       F       T
+F      F       T       T
+
+
+(e)
+
+H: (P → (Q → R)) ↔ ((P ∧ Q) → R)
+                                                          X                                              X
+P     Q     R     Q → R     P → (Q → R)     P ∧ Q     (P ∧ Q) → R     H
+T      T     T           T                       T                      T                      T                 T
+T      T     F           F                       F                      T                        F               T
+T      F     T           T                      T                       F                        T                T
+T      F     F           T                      T                       F                        T                T
+F      T     T           T                      T                      F                          T               T
+F      T     F          F                       T                      F                          T               T
+F      F     T          T                       T                     F                           T              T
+F      F     F          T                       T                     F                          T               T
+
+
+(f)
+
+H : (R ∧ ¬P) ↔ (P ∧ R)
+
+R     P     ¬P     R ∧ ¬P     P ∧ R     H
+T     T       F            F                F         T
+T     F       T            T                F         F
+F     T       F            F                F         T
+F     F       T            F                F         T
+
+(g)
+
+H : 
+
+(h)
+
+H : (false → Q) ↔ R
+
+false     Q     R     false → Q     H
+   F          T      T             T                T
+   F          T      F             T                F
+   F          F      T             T                T
+   F          F      F             T                F
+
+(i)
+
+H : true → Q
+
+true     Q     H
+   T         T      T
+   T         F      F
+
+(j)
+
+H : (P → false) ↔ R
+
+P     false     R     P → false     H
+T        F          T           F                  F
+T        F          F           F                  T
+F        F          T           T                  T
+F        F          F           T                  F
+
+(k)
+
+H : P → true
+
+P     true     H
+T        T         T
+F        T         T
+
+• Sendo I[P] = T, I[Q] = F, I[R] = F, pode-se concluir:
+
+(a) (¬P ∨ Q) ↔ (P → Q) = (F ∨ F) ↔ (T → F) = F ↔ F = T
+
+(b) P → ((Q → R) → ((P → R) → (P → R))) = T → ((F → F) → ((T → F) → (T → F)))
+= T → ( T → (F → F) = T → (T → T) = T → T = T
+
+(c) (P → ¬Q) ↔ ¬P = (T → T) ↔ F = T ↔ F = F
+
+(d) (Q → ¬P) = (F → F) = T
+
+(e) (P → (Q → R)) ↔ ((P ∧ Q) → R) = (T → (F→ F)) ↔ ((T ∧ F) → F)
+= (T → T) ↔ (F → F) = T ↔ T = T
+
+(f) (R ∧ ¬P) ↔ (P ∧ R) = (F ∧ F) ↔ (T ∧ F) = F ↔ F = T
+
+(g) (P → Q) → (((P ∧ Q) ↔ P) ∧ ((P ∨ Q) ↔ Q)) = (T → F) → (((T ∧ F) ↔ T) ∧ ((T ∨ F) ↔ F))
+= F → ((F ↔ T) ∧ (T ↔ F)) = F → (F ∧ F) = F → F = T
+
+(h) (false → Q) ↔ R = (F → F) ↔ F = T ↔ F = F
+
+(i) true → Q = T → F = F
+
+(j) (P → false) ↔ R = (T → F) ↔ F = F ↔ F = T
+
+(k) P → true = T → T = T
+
+• Seja J[H] = T e J[P] = T,
+
+(a) H : (¬P ∨ Q) ↔ (P → Q)
+
+(F ∨ Q) ↔ (T → Q) = T
+
+Para H = T, (F ∨ Q) = (T → Q)
+
+Sendo J[Q] = T, J[H] = T
+Sendo J[Q] = F, J[H] = T
+
+Logo, J[Q] = T ou F
+
+(b) P → ((Q → R) → ((P → R) → (P → R)))
+
+(c) H : (P → ¬Q) ↔ ¬P
+
+(T → ¬Q) ↔ F = T
+
+Para T → ¬Q) ↔ F = T,
+T → ¬Q = F, sendo J[Q] = T
+
+(d) H : (Q → ¬P)
+
+(Q → F) = T
+
+Para (Q → F) = T,
+J[Q] = F
+
+(e) H : (P → (Q → R)) ↔ ((P ∧ Q) → R)
+
+(T → (Q → R)) ↔ ((T ∧ Q) → R) = T
+
+Para (T → (Q → R)) ↔ ((T ∧ Q) → R) = T,
+(T → (Q → R)) = ((T ∧ Q) → R)
+
+Sendo J[R] = T, J[H] = T
+
+Se J[Q] = T, 
+(T → (Q → R)) = ((T ∧ Q) → R)
+
+Se J[Q] = F,
+(T → (Q → R)) = ((T ∧ Q) → R)
+
+Sendo J[R] = F, J[H] = F
+
+Logo, J[Q] = T ou F e J[R] = F
+
+(f) H : (R ∧ ¬P) ↔ (P ∧ R)
+
+(R ∧ F) ↔ (T ∧ R) = T
+
+Para (R ∧ F) ↔ (T ∧ R) = T,
+(R ∧ F) = (T ∧ R)
+
+Sendo J[R] = F, J[H] = T
+Sendo J[R] = T, J[H] = F
+
+Logo, J[R] = F
+
+(g) (P → Q) → (((P ∧ Q) ↔ P) ∧ ((P ∨ Q) ↔ Q))
+
+(P → Q) → (((P ∧ Q) ↔ P) ∧ ((P ∨ Q) ↔ Q)) = T 
+SSE (P → Q) → (((P ∧ Q) ↔ P) = T e
+((P ∨ Q) ↔ Q)) = T
+
+Se J[P] = T e ((P ∨ Q) ↔ Q)) = T,
+J[Q] = T
+
+(h) (false → Q) ↔ R
+
+(false → Q) ↔ R = T
+SSE (false → Q) = R
+
+(false → Q) = (F → Q) = T, logo,
+J[R] = T  e J[Q] = T ou F
+
+(i) true → Q
+
+true → Q = T
+SSE J[Q] = T
+
+(j) (P → false) ↔ R
+
+(P → false) ↔ R sse
+(P → false) = R 
+
+(P → false ) = (P → F) = T sse J[P] = F e F sse J[P] = T
+
+J[R] = F ou T e J[P] = F ou T
+
+(k) P → true
+
+P → true = T sse
+J[P] = T ou F
+
+
+6.
+
+Seja I[P → Q] = T, 
+
+I[P] = T ou F e I[Q] = T ou F, não sendo I[P] = T e I[Q] = F simultaneamente
+
+(a) I[(P ∨ R) → (Q ∨ R)]
+
+P     Q     R     P ∨ R     Q ∨ R     H
+T      T      T         T              T          T
+T      T      F         T              T          T
+T      F      T         T              T          T
+F      F      F         F              F          T
+F      T      T         T              T         T
+F      T      F         F              T         T
+
+A interpretação I[(P ∨ R) → (Q ∨ R)] = T para quaisquer
+valores verdade dos símbolos proposicionais
+
+(b) I[(P ∧ R) → (Q ∧ R)]
+
+P     R     Q     P ∧ R     Q ∧ R     H
+T     T      T         T               T         T
+T     T      F         T               F         F não possível
+T     F      T         T               F         F
+F     F      F         F               F         T
+F     T      T        F                T         T
+F     T      F        F                F         T
+
+A interpretração I[(P ∧ R) → (Q ∧ R)] = T
+para todos os casos, exceto quando  I[P ∧ R] = T e I[Q ∧ R] = F
+
+
+(c) I[(¬P ∨ Q) → (P ∨ Q)]
+
+P     ¬P     Q     ¬P ∨ Q     P ∨ Q     H
+T       F        T           T              T           T
+T       F        F           F               T          T não possível
+F       T        T          T               T           T
+F       T         F          T              F           F
+
+A interpretração I[(¬P ∨ Q) → (P ∨ Q)] = T para todos os casos,
+exceto quando I[¬P ∨ Q] = T e I[P ∨ Q] = F
+
+supondo que I[P → Q] = F,
+
+I[P] = T e I[Q] = F
+
+(a) I[(P ∨ R) → (Q ∨ R)] =  (T ∨ R) → (F ∨ R)
+
+Supondo que I[R] = F, (T ∨ R) → (F ∨ R) = T → F = F
+Supondo que I[R] = T, (T ∨ R) → (F ∨ R) = T → T = T
+
+(b) I[(P ∧ R) → (Q ∧ R)] = (T ∧ R) → (T ∧ R)
+
+Supondo que I[R] = F, (T ∧ R) → (T ∧ R) = F → F = T
+Supondo que I[R] = T, (T ∧ R) → (T ∧ R) = T→ T = T
+
+a interpretação I[(P ∧ R) → (Q ∧ R)] = T
+
+(c) I[(¬P ∨ Q) → (P ∨ Q)] = (F ∨ F) → (T ∨ F) = F → T = T
+
+7.
+
+Seja I[P ↔ Q] = T,
+
+I[P] = I[Q]
+
+(a)
+Seja I[P] = I[Q],
+para I[P] = T e I[Q] = T,
+I[¬P ∧ Q] = F ∧ T = F
+para I[P] = F e I[Q] = F,
+I[¬P ∧ Q] = T ∧ F = F
+
+Logo, I[¬P ∧ Q] = F
+
+
+
+(b) I[P ∨ ¬Q] = F sse I[P] = F e I[Q] = T
+Se I[P] = I[Q], I[P ∨ ¬Q] = T
+
+(c) I[Q → P] = F sse I[P] = T e I[Q] = F
+Se I[P] = I[Q], I[Q → P] = T
+
+(d) I[(P ∧ R) ↔ (Q ∧ R)] = T sse I[(P ∧ R)] = (I[Q ∧ R)]
+
+Seja I[P] = I[Q],
+Para I[P] = T e I[Q] = T, 
+(P ∧ R) ↔ (Q ∧ R) = T sse I[R] = T
+Para I[P] = F e I[Q] = F,
+(P ∧ R) ↔ (Q ∧ R) = F se I[R] = T ou F
+
+(e) I[(P ∨ R) ↔ (Q ∨ R)] = T sse I[(P ∨ R)] = I[(Q ∨ R)]
+
+Seja I[P] = I[Q],
+Para I[P] = T e I[Q] = T, I[(P ∨ R) ↔ (Q ∨ R)] = T se I[R] = T ou F
+Para I[P] = F e I[Q] = F, I[(P ∨ R) ↔ (Q ∨ R)] = T se I[R] = T ou F
+
+Logo, I[(P ∨ R) ↔ (Q ∨ R)] = T
+
+• supondo que I[P ↔ Q] = F
+
+I[P] ≠ I[Q]
+
+(a) I[¬P ∧ Q] = F se I[P] = T e I[Q] = F
+       I[¬P ∧ Q] = T se I[P] = F e I[Q] = T
+
+(b) I[P ∨ ¬Q] = T se I[P] = T e I[Q] = F
+       I[P ∨ ¬Q] = F se I[P] = F e I[Q] = T
+
+(c) I[Q → P] = T se I[P] = F e I[Q] = T
+       I[Q → P] = F se I[P] = T e I[Q] = F
+
+(d) I[(P ∧ R) ↔ (Q ∧ R)]
+Para I[P] = T e I[Q] = F,
+I[(P ∧ R) ↔ (Q ∧ R)] = F se I[R] = T e I[(P ∧ R) ↔ (Q ∧ R)] = F se I[R] = F
+Para I[P] = F e I[Q] = T,
+I[(P ∧ R) ↔ (Q ∧ R)] = T se I[R] = F e I[(P ∧ R) ↔ (Q ∧ R)] = F se I[R] = T
+
+(e) I[(P ∨ R) ↔ (Q ∨ R)]
+Para I[P] = T e I[Q] = F,
+I[(P ∨ R) ↔ (Q ∨ R)] = T se I[R] = F ou T
+Para  I[P] = F e I[Q] = T,
+I[(P ∨ R) ↔ (Q ∨ R)] = T se I[R] = T e I[(P ∨ R) ↔ (Q ∨ R)] = F se I[R] = F
+
+8.
+
+H = ((P → Q) → (((P ∧ Q) ↔ P) ∧ ((P ∨ Q) ↔ Q))) → P
+
+(a) Se I[P] = F,
+
+I[((P → Q) → (((P ∧ Q) ↔ P) ∧ ((P ∨ Q) ↔ Q))) → P] = 
+((F → Q) → (((F ∧ Q) ↔ F) ∧ ((F ∨ Q) ↔ Q))) → F =
+
+((F → Q) → (((F ∧ Q) ↔ F) ∧ ((F ∨ Q) ↔ Q))) → F = 
+(T → ((F ↔ F) ∧ ((F ∨ Q) ↔ Q))) → F =
+(T → (T ∧ ((F ∨ Q) ↔ Q))) → F = 
+(T → (T ∧ (T)) → F = 
+T → T → F = F
+
+(b) Se I[P] = T,
+
+I[((P → Q) → (((P ∧ Q) ↔ P) ∧ ((P ∨ Q) ↔ Q))) → P] =
+((T → Q) → (((T ∧ Q) ↔ T) ∧ ((T ∨ Q) ↔ Q))) → T = T
+
+10.
+
+(a) 
+José ir à festa - P
+Maria gostar da festa - Q
+
+(P ∧ ¬ Q) ∨ (¬ P ∧ Q)
+
+(b)
+A novela ser exibida - P
+O programa político ser exibido - Q
+
+Q → ¬ P
+
+(c)
+
+Chover - P
+Eu ir para casa - Q
+Ficar no escritório - R
+
+P → Q ∧ ¬ P → R
+
+(d)
+
+Maria é bonita, inteligente e sensível - P
+Rodrigo ama maria - Q
+Rodrigo é feliz - R
+
+(P ∧ Q) → R
+
+(e)
+
+Sr. Oscar é feliz - P
+Sra. Oscar é feliz - Q
+
+(P → ¬ Q) ∧ (¬P → Q)
+
+(f)
+
+Maurício vir à festa - P 
+Kátia não vir à festa - Q
+Kátia ficar infeliz - R
+
+(P ∧ ¬Q) ∨ (¬P ∧ R)
+
+12.
+
+(a) Possivelmente, irei ao cinema - P
+
+(b) Fui gordo, hoje sou magro - P
+
+(c) Existe no curso de Ciência da Computação um aluno admirado por todos - P
+
+(d) Existe um aluno em minha sala que não gosta de nenhum colega - P
+
+(e) Existe aluno de Ciência da Computação que é detestado por seus colegas - P
+
+(f) Necessariamente algum político é desonesto - P
+
+(g) Amanhã irei ao cinema e depois irei ao teatro - P
+
+(h) Quase todo político é desonesto - P
+
+(i) Adalton sempre foi amigo de João Augusto - P
+
+(j) Toda regra tem exceção - P
+
+(k) Quase todo funcionário da Sigma é um talento - P
+
+(l) Poucos funcionários da Sigma não são empreendedores - P
+
+(m) O presidente da Sigma é admirado por seus colaboradores - P
+
+Não considera os elementos internos da sentença em nenhum caso, pois
+não existe conectivos lógicos.
