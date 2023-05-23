@@ -1,0 +1,522 @@
+• Prove que os alfabetos {¬, ∧}, {¬, ∨}, {nand} e {nor} são completos.
+--------------------------------------------------------------------------------------
+ 
+
+Seja Ψ um conjunto de conectivos:
+ 
+
+Ψ é completo se dado uma fórmula H do tipo ¬P, (P ∧ Q), (P ∨ Q), (P → Q) ou (P ↔ Q)
+é possível determinar outra fórmula G equivalente a H que contém apenas os conectivos de Ψ e os símbolos de P e Q em H
+ 
+
+------------------------------O conjunto {¬, ∧} é completo?
+ 
+
+• ¬ P ≡ ¬ P
+ 
+
+• P ∨ Q ≡ ¬¬ (P ∨ Q) por dupla negativa
+                  ≡  ¬(¬P ∧ ¬P) por Morgan
+ 
+
+• P → Q ≡ 
+ 
+
+ 
+
+-------------------------------O conjunto {¬, ∨} é completo?
+
+
+• ¬ P ≡ ¬ P
+ 
+
+• P ∨ Q ≡ P ∨ Q
+ 
+
+• P → Q ≡ ¬ P ∨ Q por substituição da implicação
+ 
+
+• P ∧ Q ≡ ¬¬ (P ∧ Q) por dupla negativa
+                  ≡ ¬(¬P ∨ ¬Q) por Morgan
+ 
+
+• P ↔ Q ≡ ((P → Q) ∧ (Q → P)) por substituição da dupla implicação
+                    ≡ ((¬P ∨ Q) ∧ (¬Q ∨ P)) por substituição da implicação
+                    ≡ ¬¬ ((¬P ∨ Q) ∧ (¬Q ∨ P)) por dupla implicação
+                    ≡ ¬(¬(¬P ∨ Q) ∨ ¬(¬Q ∨ P) ) por Morgan
+
+
+Portanto, O conjunto {¬, ∨} é completo.
+ 
+
+ 
+
+-------------------------------O conjunto {nand} é completo?
+ 
+
+O conjunto {nand} é completo se for possível representá-lo pelo conjunto completo {¬, ∨}
+ 
+
+Prova:
+ 
+
+• ¬ P ≡ (P nand P)
+ 
+
+• P ∨ Q  ≡ ¬ P nand ¬ Q
+                   ≡ ((P nand P) nand (Q nand Q))
+
+
+Portanto, O conjunto {nand} é completo.
+ 
+
+------------------------------O conjunto {nor} é completo?
+
+
+O conjunto {nor} é completo se for possível representá-lo pelo conjunto completo {¬, ∨}
+
+
+Prova:
+
+
+• ¬ (P  ∨ Q) ≡ P nor Q
+
+
+________________________________________________________
+
+ 
+
+• Dada uma fórmula E, obter uma fórmula G, equivalente a E, contendo apenas os conectivos {¬, ∨}
+ 
+
+E = (P ↔ Q) ∨ (R → S)
+
+
+• P ↔ Q ≡ ((P → Q) ∧ (Q → P)) por substituição da dupla implicação
+≡ ((¬P ∨ Q) ∧ (¬Q ∨ P)) por substituição da implicação
+≡ ¬¬ ((¬P ∨ Q) ∧ (¬Q ∨ P)) por dupla implicação
+≡ ¬(¬(¬P ∨ Q) ∨ ¬(¬Q ∨ P) ) por Morgan
+
+
+• R → S  ≡ ¬ P ∨ Q por substituição da implicação
+
+
+G = ¬(¬(¬P ∨ Q) ∨ ¬(¬Q ∨ P) ) ∨ (¬ P ∨ Q)
+
+
+________________________________________________________
+
+
+• Dada uma fórmula H, obter uma fórmula G, equivalente a H, contendo apenas o conectivo nand e os símbolos de H
+
+
+H = P ∧ (R → S)
+≡ P ∧ (¬R ∨ S) 
+≡ P ∧ ((¬R nand ¬R ) nand (S nand S))
+≡ ¬¬(P ∧ ((¬R nand ¬R ) nand (S nand S)))
+≡ ¬(¬P ∨ ¬(((R nand R) nand (R nand R) ) nand (S nand S)))
+≡ ¬((P nand P) nand ((R nand R) nand (R nand R) ) nand (S nand S)) nand ((R nand R) nand (R nand R) ) nand (S nand S))
+≡ ¬((P nand P) nand ((R nand R) nand (R nand R) ) nand (S nand S)) nand ((R nand R) nand (R nand R) ) nand (S nand S))
+≡ (P nand P) nand ((R nand R) nand (R nand R) ) nand (S nand S)) nand ((R nand R) nand (R nand R) ) nand (S nand S) nand (P nand P) nand ((R nand R) nand (R nand R) ) nand (S nand S)) nand ((R nand R) nand (R nand R) ) nand (S nand S)
+________________________________________________________
+
+
+• Verifique se as afirmações a seguir são verdadeiras, justificando
+
+
+- (¬P) pode ser expressa equivalentemente utilizando apenas o conectivo ∨ e P
+Falso.
+
+
+Caso: I[P] = T. I(¬P) = F
+A fórmula P ∨ P = T, assim como P ∨ P ∨ P = T e assim por diante.
+
+
+Caso: I[P] = F. I(¬P) = T
+A fórmula P ∨ P = F, assim como P ∨ P ∨ P = F e assim por diante.
+
+
+
+
+- (P ∨ Q) pode ser expressa equivalentemente usando apenas o conectivo →, P e Q
+
+
+Falso.
+
+
+
+
+________________________________________________________
+
+
+• Obtenha o FND e FNC de:
+
+
+¬(P ∧ Q) → R
+ 
+Tabela verdade:
+
+
+P     Q       R         ¬(P ∧ Q)         (P ∧ Q) → R
+T      T       T                F                            T
+T      T       F                F                            T
+T      F       T                T                            T
+T      F       F                T                            F
+F      T       T                T                            T
+F      T       F                T                            F
+F      F       T                T                            T
+F      F       F                T                            F
+
+
+Conjunções:
+
+
+1)   I[P] = T e I[Q] = T e I[R] = T
+
+
+P ∧ Q ∧ R
+
+2) I[P] = T e I[Q] = T e I[R] = F
+
+
+P ∧ Q ∧ ¬R
+
+3) I[P] = T e I[Q] = F e I[R] = T
+
+
+P ∧ ¬Q ∧ R
+
+4) I[P] = F e I[Q] = T e I[R] = T
+
+
+¬P ∧ Q ∧ R
+
+5) I[P] = F e I[Q] = F e I[R] = T
+
+
+¬P ∧ ¬Q ∧ R
+
+
+
+
+FND:  (P ∧ Q ∧ R) ∨ (P ∧ Q ∧ ¬R) ∨  (P ∧ ¬Q ∧ R) ∨ (¬P ∧ Q ∧ R) ∨ (¬P ∧ ¬Q ∧ R)
+
+
+Disjunções: 
+
+
+1) I[P] = T e I[Q] = F e I[R] = F
+
+
+¬P ∧ Q ∧ R
+
+2) I[P] = F e I[Q] = T e I[R] = F
+
+
+P ∧ ¬Q ∧ R
+
+3) I[P] = F e I[Q] = F e I[R] = F
+
+
+P ∧ Q ∧ R
+
+
+FNC: (¬P ∧ Q ∧ R) ∧ (P ∧ ¬Q ∧ R) ∧ (P ∧ Q ∧ R)
+
+
+________________________________________________________
+
+
+Dada a fórmula 
+
+
+H = ((P → Q) ∧ (¬Q ↔ R)) ↔ (¬R ∧ P)
+
+
+- Construa uma fórmula equivalente utilizando apenas os conectivos do conjunto {¬, ∨}
+
+
+
+• P → Q ≡ ¬ P ∨ Q por substituição da implicação
+
+
+• ¬Q ↔ R ≡ ((P → Q) ∧ (Q → P)) por substituição da dupla implicação
+≡ ((¬P ∨ Q) ∧ (¬Q ∨ P)) por substituição da implicação
+≡ ¬¬ ((¬P ∨ Q) ∧ (¬Q ∨ P)) por dupla implicação
+≡ ¬(¬(Q ∨ ¬R) ∨ ¬(¬R ∨ ¬Q) ) por Morgan
+
+
+- Gere as fórmulas equivalentes na FND e FNC
+
+
+
+
+
+
+
+
+
+
+________________________________________________________
+2. 
+
+
+∀ n, (1 +  2 + 3  + ... + n) = n(n+1)/2.
+
+
+• Caso base:
+
+
+n = 1
+
+
+1 = (1 * 2) / 2 OK
+
+
+n = 1 ok
+• HIpótese: (1 + 2 + 3 + ... + n) = n(n+1)/2.
+
+
+
+
+• Tese: 1 + 2 + 3 + ... + n + (n+1) = ((n+1) * (n + 2)) / 2
+
+
+1 + 2 + 3 + ... + n + (n+1) = (n(n+1))/2 + (n+1) = ((n+1) * (n + 2)) / 2 C.Q.D
+
+
+
+
+________________________________________________________
+
+
+3. Demonstre por indução matemática: número de parênteses na fórmula H é par.
+
+
+...
+
+
+...
+
+
+
+
+∀K, A(K) => A(K+1)
+
+
+________________________________________________________
+
+
+• Utilizando um sistema axiomático sem hipóteses e apenas com o Modus Ponens, prove
+|- (P v ¬P).
+
+
+β = { } |- (P v ¬P)
+ 
+
+Ax₁ = (H ∨ H) → H
+Ax₂ = H → (G v H)
+Ax₃ = (H → G) → ((E v H) → (E v G))
+
+
+• Ax₃ com H = (P v P), E = ¬P, G = P, temos:
+
+
+(1) ((P v P) → P) → ((¬P v (P v P)) → (P v ¬P))
+
+
+• Utilizando Ax₁ com H = P, temos:
+
+
+(2) (P ∨ P) → P
+
+
+• Aplicando M.P entre (2) e (1), temos:
+
+
+(3) ((¬P v (P v P)) → (P v ¬P))
+
+
+• A parte antecedente de (3) pode ser gerada pelo Ax₂ para H = P e G = P.
+
+
+(4) (P → (P v P))
+
+
+• Aplicando a substituição da implicacação, temos:
+
+
+(5) (¬P  v (P v P))
+
+
+• Aplicando M.P entre (5) e (3), temos:
+
+
+(6) (P v ¬P)
+C.Q.D
+________________________________________________________
+
+
+
+• A partir das hipóteses abaixo e utilizando apenas o Modus Ponens (MP) como regra de
+
+inferência, prove P (faça uma prova por absurdo).
+
+β = { ¬S → P, R v ¬P, ¬S}  |- P
+
+
+(1)  ¬S → P
+(2)  R v ¬P
+(3) ¬S
+(4) ¬P -> negação do teorema
+(5) ¬P → S por contrapositiva em (1)
+(6) S, por M.P entre (4) e (5)
+(6) é Absurdo. Logo, β |- P C.Q.D
+
+
+________________________________________________________
+ 
+
+• Prove que A → B, B → C, A |- C
+ 
+
+β = {A → B, B → C, A}
+ 
+
+(1) A → B
+(2) B → C
+(3) A
+(4) B por M.P = A, A → B
+                                   ----------
+                                           B
+(5) C por M.P = B, B →  C
+                                   -----------
+                                           C
+C.Q.D
+
+
+________________________________________________________
+ 
+
+• Prove o teorema abaixo:
+ 
+
+Hipóteses: 
+ 
+
+Hoje não é domingo ou Manuel está feliz
+ 
+
+Se Manuel está feliz, ele é amoroso.
+ 
+
+Maria está feliz ou Manuel não é amoroso.
+ 
+
+Hoje é domingo.
+ 
+
+Regra de Inferência: Modus Ponens
+ 
+
+Teorema: Maria está feliz
+ 
+
+P = Hoje é domingo
+ 
+
+Q = Manuel está feliz
+
+
+R = Manuel é amoroso
+ 
+
+S = Maria está feliz
+ 
+
+β = {¬P ∨ Q, Q→R, S ∨ ¬R, P} |-  S
+ 
+
+(1) ¬P ∨ Q
+(2) Q →R
+(3) S ∨ ¬R
+(4) P
+(5) P→ Q, por substituição da implicação
+(6) Q, por MP entre (4) e (5)
+(7) R, por MP entre (6) e (2)
+(8) ¬R ∨ S, por comutativa da disjunção
+(9) R → S, por substituição da implicação
+(10) S, por M.P entre (7) e (9) 
+C.Q.D
+"Maria está feliz"
+ 
+
+________________________________________________________
+
+
+• Verifique a validade do argumento abaixo:
+
+
+" Se chover hoje, então hoje nós não teremos churrasco. Se não tivermos churrasco hoje, então teremos churrasco amanhã. Portanto, se chover hoje, então nós teremos churrasco amanhã.”
+
+
+Chover hoje: P
+Hoje teremos churrasco: Q
+Amanhã teremos churrasco: R
+
+
+β = {P → ¬Q, ¬Q → R, P} |- R
+
+
+(1) P → ¬Q
+(2) ¬Q → R
+(3) P
+(4) ¬Q por M.P = P, P → ¬Q
+                                       ----------
+                                              ¬Q
+
+(5) R por M.P = ¬Q,¬Q → R
+                                   -----------
+                                            R
+
+
+C.Q.D
+"Amanhã teremos churrasco"
+
+
+________________________________________________________
+
+
+• Mostre que as hipóteses “Se você me enviar um e-mail, eu termino de escrever o programa”,
+“Se você não me enviar um e-mail, então eu vou dormir cedo”, e “Se eu for dormir cedo,
+então eu vou acordar revigorado.”, levam à conclusão: “Se eu não terminar de escrever o
+programa, então eu vou acordar revigorado.
+
+
+ Você me enviar um e-mail: P
+
+Eu termino de escrever o programa: Q
+Eu vou dormir cedo: R
+Eu vou acordar revigorado: S
+
+
+
+
+β = {P → Q, ¬P → R, R → S, ¬Q} |-  S
+
+
+(1) P → Q
+(2) ¬P → R
+(3) R → S
+(4) ¬Q
+(5) ¬Q → ¬P por contrapositiva (1)
+(6) ¬P por M.P = ¬Q, ¬Q → ¬P
+                                            ----------
+                                                    ¬P
+(7) R por M.P = ¬P, ¬P → R
+                                             ----------
+                                                     R
+(8) S por M.P = R, R → S
+                                      ----------
+                                            S
+C.Q.D
