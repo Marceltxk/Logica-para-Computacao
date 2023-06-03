@@ -1,0 +1,157 @@
+Lista 04
+
+1) P(x) como o predicado " x <= 4"
+
+a) P(0)
+
+True
+
+b) P(4)
+
+True
+
+c) P(6)
+
+False
+
+2) P(x) como o predicado " a palavra x contém a letra 'a' ".
+
+a) P(orange)
+
+True
+
+b) P(lemon)
+
+False
+
+c) P(true)
+
+False
+
+d) P(false)
+
+True
+
+3) Q(x,y) como o predicado “x é a capital de y”
+
+a) Q(Denver, Colorado)
+
+True
+
+b) Q(Detroit, Michigan)
+
+False
+
+c) Q(Massachusetts, Boston)
+
+False
+
+d) Q(Nova York, Nova York)
+
+False
+
+4) if P(x) then x:=1 em que P(x) é a proposição "x > 1"
+
+a) x = 0
+
+(proposição não alcançada)
+
+b) x = 1
+
+(proposição não alcançada)
+
+c) x = 2
+
+x = 1
+
+5) P(x) como o predicado "x = x²"
+
+a) P(0)
+
+True
+
+b) P(1)
+
+True
+
+c) P(2)
+
+False
+
+d) P(-1)
+
+True
+
+e) ∃x P(x)
+
+True
+
+f) ∀x P(x)
+
+False
+
+6) P(x) como o predicado "(x+1) > 2x"
+
+a) p(0)
+
+True
+
+b) p(-1)
+
+True
+
+c) p(2)
+
+False
+
+d) ∃x p(x)
+
+True
+
+e) ∀x p(x)
+
+False
+
+f) ∃x ~p(x)
+
+True
+
+g) ∀x ~p(x)
+
+False
+
+7) 
+
+a) ∀n ((n+1) > n)
+
+True
+
+b) ∃n (2n = 3n)
+
+True
+
+c) ∃n (n = -n)
+
+True
+
+d) ∀n (n2 >= n)
+
+True
+
+8) 
+
+a) ∃x (x³ = -1)
+
+True
+
+b) ∃x (x⁴ < x²)
+
+False
+
+c) ∀x ((-x)² = x²)
+
+True
+
+d) ∀x (2x > x)
+
+False
